@@ -1,15 +1,15 @@
 import React from 'react';
 // import PropTypes from "prop-types";
 import { useDispatch, useSelector } from 'react-redux';
-import { filterContacts } from 'redux/contactSlice';
-import { getFilter } from 'redux/selectors';
+import { filterContact } from '../../redux/contacts/contacts-action';
+import { getFilter } from '../../redux/contacts/contacts-selectors';
 
 const Filter = () => {
   const dispatch = useDispatch();
   const filterName = useSelector(getFilter);
 
   const handleInput = evt => {
-    dispatch(filterContacts(evt.currentTarget.value));
+    dispatch(filterContact(evt.currentTarget.value));
   };
 
   return (
